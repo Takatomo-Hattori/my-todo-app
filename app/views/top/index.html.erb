@@ -1,0 +1,17 @@
+<div class="topPage">
+  <div class="listWrapper">
+    <% @lists.each do |list| %>
+      <div class="list">
+        <div class="list_header">
+          <h2 class="list_header_title"><%= list.title %></h2>
+
+          <div class="list_header_action">
+            <%= link_to("削除", list, method: :delete, date: {confirm: "#{list.title}を削除して大丈夫ですか？"},class:"list_header_action_text") %>
+            <%= link_to("編集", edit_list_path(list),class: "list_header_action_text") %>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
